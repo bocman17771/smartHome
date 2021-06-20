@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+}
+/* layout */
+
+.header {
+  background-color: #3496F0;
+  height: 5rem;
+  border: solid 1px grey;
+}
+
+.main {
+  height: 20rem;
+}
+
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #3496F0;
+}
+.footer .row {
+  justify-content: space-between;
+}
+.footer .col {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* components */
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.button {
+  padding: 19px 134px;
+  border-radius: 1rem;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button_color_blue {
+  background-color: #104ABA;
+}
+
+
+/* blockSelection */
+.section__blockSelection {
+  background-color: #3496F0;
+}
+.blockSelection {
+  padding-bottom: 5rem;
+}
+.blockSelection img {
+  max-width: 100%;
+}
+.blockSelection__title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.blockSelection__title h1{
+  text-align: left;
+}
+.blockSelection__body {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.blockSelection__menu {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  width: 100%;
+  background-color: white;
+}
+.blockSelection__menuTitle {
+  position: absolute;
+  bottom: 100%;
+  text-align: center;
+  padding: 25px;
+  background-color: white;
+}
+.blockSelection__menuBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+/* section__okno */
+.section__okno {
+  padding-top: 8rem;
+  background-color: #E5E5E5;
+}
+
+
+/* components */
+
+.selectOne {
+  position: relative;
+  margin-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 125px;
+  border-right: 1px solid #E8E8E8;
+}
+.selectOne::after {
+  content: url('./VectorSelect.svg');
+  position: absolute;
+  right: 25px;
+  bottom: 50%;
+  transform: translateY(50%);
+  cursor: pointer;
+}
+.selectOne__title {
+  color: rgba(7, 7, 7, 1);
+  margin-bottom: 10px;
+}
+.selectOne__subtitle {
+  color: rgba(183, 183, 185, 1);
+}
+.selectOne__input {
+  display: none;
+}
+
+
+/* class */
+.border_none {
+  border: none
+}
+.opacity_04 {
+  opacity: 0.4;
+}
+
+
+.row, .col {
+  display: flex;
+}

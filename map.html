@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <h1>hat</h1>
+      </div>
+    </div>
+</header>
+<main class="main">
+  <section class="section section__blockSelection">
+    <div class="container">
+      <div class="blockSelection">
+        <div class="blockSelection__title">
+          <h1>
+            <span>Умный магазин</span> </br>
+            <span>для вашей машины</span>
+          </h1>
+        </div>
+
+        <div class="blockSelection__body">
+          <img class="blockSelection__img" src="./CarGeneral.svg">
+          <div class="blockSelection__menu">
+            <div class="blockSelection__menuTitle">
+              <span>Под какую машину нужны запчасти?</span>
+            </div>
+            <div class="blockSelection__menuBody">
+              <form class="formSelectOne">
+                <div class="selectOne" data-state="">
+                  <p class="selectOne__title">Бренд</p>
+                  <div class="selectOne__subtitle" data-default="Option 0">Выберите бренд</div>
+                  <div class="selectOne__content">
+                    <!-- <input class="selectOne__input" id="singleSelect0" type="radio" name="singleSelect" checked />
+                    <label class="selectOne__label" for="singleSelect0">Option 0</label> -->
+                  </div>
+                </div>
+              </form>
+              <form class="formSelectOne">
+                <div class="selectOne" data-state="">
+                  <p class="selectOne__title">Модель</p>
+                  <p class="selectOne__subtitle" data-default="Option 0">Выберите модель</p>
+                  <div class="selectOne__content">
+                    <!-- <input class="selectOne__input" id="singleSelect0" type="radio" name="singleSelect" checked />
+                    <label class="selectOne__label" for="singleSelect0">Option 0</label> -->
+                  </div>
+                </div>
+              </form>
+              <form class="formSelectOne">
+                <div class="selectOne border_none" data-state="">
+                  <p class="selectOne__title">Год выпуска</p>
+                  <p class="selectOne__subtitle" data-default="Option 0">Выберите год выпуска</p>
+                  <div class="selectOne__content">
+                    <!-- <input class="selectOne__input" id="singleSelect0" type="radio" name="singleSelect" checked />
+                    <label class="selectOne__label" for="singleSelect0">Option 0</label> -->
+                  </div>
+                </div>
+              </form>
+              <div class="button button_color_blue opacity_04">Выбрать</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="section section__okno"></section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          
+        </div>
+        <div class="col">
+          <img src="./Logo.svg" alt="">
+          <p>© 1998–2021 ООО «Smart Distribution». Все права защищены.</p>
+          <p>Site by ROKY</p>
+        </div>
+        <div class="col">
+          <h2 class="title">
+            Меню
+          </h2>
+          <ul>
+            <li>Главная</li>
+            <li>Доставка и оплата</li>
+            <li>О нас</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>Для партнеров</li>
+            <li>Как сделать заказ?</li>
+            <li>Избранное</li>
+            <li>Заказы</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2 class="title">
+            контакты
+          </h2>
+          <ul>
+            <li>smart.tuning@gmail.com</li>
+            <li>+7 903 380 01 61</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>Самара, ул. 1-я Владимирская, д. 12А</li>
+            <li>Пн-Пт: 09:00 – 18:00</li>
+            <li>Сб-Вс: Выходной</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+</body>
+
+
+
+<script> 
+
+const select = function() {
+  const selectOneInput = document.querySelectorAll('.selectOne__label')
+  selectOneInput.forEach(e => {
+    e.classList.add()
+  })
+
+
+}
+
+
+select()
+</script>
+
+
+<!-- <script>
+
+
+
+
+
+  const arr =  [
+    ['test1', 'test1'],
+    ['test2', 'test2'],
+    ['get', 'get1'],
+    ['id', 1],
+    ['id', 2]
+  ]
+  const arrTwo =  [
+    ['test1', 'test1'],
+    ['test2', 'test2'],
+    ['get', 'get1'],
+    ['id', 1],
+    ['id', 2]
+  ]
+
+  const obj =  {
+    'testObj': 'testObj',
+    'test2': 'test2'
+  }
+
+  const arr2 = {
+    one: {
+      value: 'a',
+      id: 1
+    },
+    two: {
+      value: 'b',
+      id: 2
+    },
+    three: {
+      value: 'c',
+      id: 3
+    }
+  }
+
+  arrTest = {
+    water: [
+      {volume: 'test1', id: 1},
+      {volume: 'test41', id: 31323}
+    ],
+    salt: [
+      {volume: 'test2', id: 3123},
+      {volume: 'test12', id: 132}
+    ],
+    metal: [
+      {volume: 'test3', id: 1421},
+      {volume: 'test2', id: 123}
+    ]
+  }
+
+let newArr = []
+  for(let key in arrTest) {
+    arrTest[key].forEach(e => {
+      newArr.push(e.id)
+    })
+  }
+  console.log(newArr)
+
+// arrTwo.forEach(e => {
+  // const map = new Map(arr)
+  // console.log(map)
+// })
+
+
+  // let arrTestTest = []
+
+  // for(let key in arrTest) {
+  //   const obj = Object.entries(arrTest[key])
+  //   // const map = new Map(arrTest[key])
+  //   console.log(arrTest[key])
+  // }
+
+  // const map = new Map(arr)
+  // map.forEach( e => console.log(e.entries()))
+  // for( let key of map.entries()) {
+  //   console.log(key)
+  // }
+
+</script> -->
+</html>
