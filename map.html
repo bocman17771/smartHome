@@ -22,11 +22,14 @@
 
 <input class="input input-js" type="text" value="" >
 
+
+<!-- CHECKBOX -->
 <div class="checkbox">
   <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
   <label for="color-1">Indigo</label>
 </div>
 
+<!-- PLUS MINUS -->
 <div class="checkbox">
   <input class="custom-checkbox2" type="checkbox" checked id="color-2" name="color-1" value="indigo">
   <label for="color-2">Indigo</label>
@@ -172,14 +175,14 @@
 <script> 
 
 
-
+// select
 const option = document.querySelector('.slect-js')
 option.addEventListener('change', function() {
   console.log(this.value)
 })
 
 
-
+// input
 const input = document.querySelector('.input-js')
 input.addEventListener('input', function() {
   console.log(this.value)
@@ -187,7 +190,7 @@ input.addEventListener('input', function() {
 
 
 
-
+// checkbox PLUS/MINUS
 const customCheckbox = document.querySelector('.custom-checkbox2')
 const blockInner = document.querySelector('.block > .blockInner')
 blockInner.style.display = 'none'
