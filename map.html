@@ -5,46 +5,69 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <!-- Checkbox -->
-  <!-- <link href="nouislider.css" rel="stylesheet"> 
-  <script src="nouislider.js"></script> -->
+  
   <title>Document</title>
 </head>
 <body>
 
+  
 
-<select class="slect-js" value="" name="bvbv" id="">
+
+<!-- <select class="slect-js" value="" name="bvbv" id="">
   <option value="1"></option>
   <option value="12"></option>
   <option value="13"></option>
-</select>
+</select> -->
 
-<input class="input input-js" type="text" value="" >
+<!-- <input class="input input-js" type="text" value="" > -->
 
-
-<!-- CHECKBOX -->
-<div class="checkbox">
-  <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
-  <label for="color-1">Indigo</label>
-</div>
-
-<!-- PLUS MINUS -->
-<div class="checkbox">
-  <input class="custom-checkbox2" type="checkbox" checked id="color-2" name="color-1" value="indigo">
-  <label for="color-2">Indigo</label>
-</div>
-
-<div class="block">
-  <div class="blockInner">
-    y
+<div id="app">
+  <div class="block">
+    <transition name="slide-fade" v-if="activeMenu">
+      <div class="block__menu">
+        <h2>Вспылтие</h2>
+      </div>
+    </transition>
+   {{window}}
+    <select name="" id="" v-model="select">
+      <option value="1"></option>
+      <option value="2"></option>
+      <option value="3"></option>
+    </select>
+    <input type="checkbox" v-model="activeMenu" id="active-1">
+    <label for="active-1"> отрыть </label>
+    <ul>
+      <li v-for="item in lists" :key="item">{{item}}</li>
+    </ul>
   </div>
 </div>
+
+
+
+
 </body>
-
+<script src="./js/vue.js"></script>
 <style>
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>
 
 
+
+
+<!-- <style>
 
   .block{
     border: solid 1px red;
@@ -52,10 +75,6 @@
     width: 10px;
     height: 10px;
   }
-
-
-
-
 
   /* для элемента input c type="checkbox" */
   .custom-checkbox {
@@ -113,11 +132,6 @@
   }
 
 
-
-
-
-
-
   /* для элемента input c type="checkbox" */
   .custom-checkbox2 {
     position: absolute;
@@ -170,9 +184,24 @@
     background-image: url("./minus.svg");
   }
 
-</style>
+</style> -->
 
-<script> 
+
+
+<!-- <script>
+  var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 100
+    }
+});
+</script> -->
+
+<!-- <script> 
 
 
 // select
@@ -238,7 +267,7 @@ const select = function() {
 
 
 select()
-</script>
+</script> -->
 
 
 <!-- <script>
