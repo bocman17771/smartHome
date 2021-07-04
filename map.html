@@ -1,358 +1,277 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <!-- Checkbox -->
+  
   
   <title>Document</title>
 </head>
 <body>
 
+  <header class="header">
+    <div class="headerInner">
+      <div class="logo">
+        logo
+      </div>
+      <div class="rightBlock">
+        <div class="icon" data-icon="1">icon1</div>
+        <div class="icon" data-icon="2">icon2</div>
+        <div class="icon" data-icon="3">icon3</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="searchWrap" data-search="wrap">
+    <div class="search">
+      <div class="wrapInput">
+        <div class="chips" data-value=""></div>
+        <input class="search__input" type="search" placeholder="search">
+      </div>
+      <div class="blockLeavesWrap">
+        <div class="blockLeaves">
+          <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapBtn">
+    <button class="button" data-ls="set">записать</button>
+    <button class="button" data-ls="get">удалить</button>
+  </div>
+  <div class="selectWrap">
+    <div class="">тип</div>
+    <select name="" id="select">
+      <option value="">1</option>
+      <option value="">2</option>
+    </select>
+    <label for="select"></label>
+  </div>
+
+<style>
+  /* select */
+  .selectWrap {
+    position: relative;
+    width: 3rem;
+    height: 1rem;
+    border: solid red 1px;
+  }
+  .selectWrap select {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .selectWrap label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: solid 1px green;
+  }
+
   
 
+  
+  .wrapBtn {
+    padding-top: 7rem;
+  }
+  .button {
+    color: black;
+  }
+  /* header */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    height: auto;
+    width: 100%;
+    background-color: grey;
+  }
+  .headerInner {
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .rightBlock {
+    display: flex;
+    cursor: pointer;
+  }
+  .rightBlock .icon:not(:last-child) {
+    margin-right: 1rem;
+  }
 
-<!-- <select class="slect-js" value="" name="bvbv" id="">
-  <option value="1"></option>
-  <option value="12"></option>
-  <option value="13"></option>
-</select> -->
+  /* search */
+  .searchWrap {
+    position: fixed;
+    right: 0;
+    top: 3rem;
+    z-index: 100;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    height: 100%;
+    width: 100%; 
+    background-color: burlywood;
+    transition: opacity 1s;
+  }
+  .searchWrap_animate {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-<!-- <input class="input input-js" type="text" value="" > -->
+  .search {
+    background-color: grey;
+    position: absolute;
+    width: 100%;
+    margin-top: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapInput {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    /* margin-left: auto; */
+    padding-left: 0.3rem;
+    width: 0;
+    opacity: 0;
+    border-radius: 4rem;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
+  }
+  .wrapInput_animate {
+    width: 80%;
+    opacity: 1;
+  }
 
-<div id="app">
-  <div class="block">
-    <transition name="slide-fade" v-if="activeMenu">
-      <div class="block__menu">
-        <h2>Вспылтие</h2>
-      </div>
-    </transition>
-   {{window}}
-    <select name="" id="" v-model="select">
-      <option value="1"></option>
-      <option value="2"></option>
-      <option value="3"></option>
-    </select>
-    <input type="checkbox" v-model="activeMenu" id="active-1">
-    <label for="active-1"> отрыть </label>
-    <ul>
-      <li v-for="item in lists" :key="item">{{item}}</li>
-    </ul>
-  </div>
-</div>
+  .search__input {
+    border: none;
+    width: 100%;
+    border-radius: 30px;
+    outline: none;
+  }
+  .blockLeavesWrap {
+    position: absolute;
+    right: 50%;
+    top: 2rem;
+    height: 0;
+    transform: translateX(50%);
+    overflow: auto;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
+  }
+  .blockLeavesWrap_animate {
+    opacity: 1;
+    height: 10rem;
+  }
+  .blockLeaves {
+    background-color: aqua;
+    height: auto;
+    width: auto;
+    padding: 3rem;
+    height: auto;
+    width: auto;
+  }
+  .chips {
+    height: 0.8rem;
+    width: 3rem;
+    background-color: rgb(198, 185, 185);
+    border-radius: 3rem;
+  }
 
-
-
-
-</body>
-<script src="./js/vue.js"></script>
-<style>
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active до версии 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
+  /* animate */
+ 
+  
 </style>
 
-
-
-
-<!-- <style>
-
-  .block{
-    border: solid 1px red;
-    background-color: green;
-    width: 10px;
-    height: 10px;
+<script>
+  
+  const iconBtn = document.querySelectorAll('.rightBlock [data-icon]')
+  const searchWrap = document.querySelector('.searchWrap')
+  const wrapInput = document.querySelector('.wrapInput') 
+  const blockLeavesWrap = document.querySelector('.blockLeavesWrap')
+  
+  function getLocalStorage(key) {
+    return  JSON.parse(localStorage.getItem(key))
   }
-
-  /* для элемента input c type="checkbox" */
-  .custom-checkbox {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
-  /* для элемента label, связанного с .custom-checkbox */
-  .custom-checkbox+label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-  }
-  /* создание в label псевдоэлемента before со следующими стилями */
-  .custom-checkbox+label::before {
-    content: '';
-    display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-  }
-  /* стили при наведении курсора на checkbox */
-  .custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
-    border-color: #b3d7ff;
-  }
-  /* стили для активного чекбокса (при нажатии на него) */
-  .custom-checkbox:not(:disabled):active+label::before {
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
-  }
-  /* стили для чекбокса, находящегося в фокусе
-  .custom-checkbox:focus+label::before {
-    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
-  }
-  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-  /* .custom-checkbox:focus:not(:checked)+label::before {
-    border-color: #80bdff;
-  } */ 
-  /* стили для чекбокса, находящегося в состоянии checked */
-  .custom-checkbox:checked+label::before {
-    border-color: #0b76ef;
-    background-color: #104ABA;
-    background-image: url("./vec.svg");
-  }
-  /* стили для чекбокса, находящегося в состоянии disabled */
-  .custom-checkbox:disabled+label::before {
-    background-color: #ff330a;
-    /* background-image: url("./plus.svg"); */
-  }
-
-
-  /* для элемента input c type="checkbox" */
-  .custom-checkbox2 {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
-  /* для элемента label, связанного с .custom-checkbox */
-  .custom-checkbox2+label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-  }
-  /* создание в label псевдоэлемента before со следующими стилями */
-  .custom-checkbox2+label::before {
-    content: '';
-    display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
-    flex-shrink: 0;
-    flex-grow: 0;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-  }
-  /* стили при наведении курсора на checkbox */
-  .custom-checkbox2:not(:disabled):not(:checked)+label:hover::before {
-    border-color: #b3d7ff;
-  }
-  /* стили для активного чекбокса (при нажатии на него) */
-  .custom-checkbox2:not(:disabled):active+label::before {
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
-  }
-  /* стили для чекбокса, находящегося в фокусе
-  .custom-checkbox:focus+label::before {
-    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
-  }
-  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-  /* .custom-checkbox:focus:not(:checked)+label::before {
-    border-color: #80bdff;
-  } */ 
-  /* стили для чекбокса, находящегося в состоянии checked */
-  .custom-checkbox2:checked+label::before {
-    background-image: url("./plus.svg");
-  }
-  /* стили для чекбокса, находящегося в состоянии disabled */
-  .custom-checkbox2:not(:checked)+label::before {
-    /* background-color: #8d3610; */
-    background-image: url("./minus.svg");
-  }
-
-</style> -->
-
-
-
-<!-- <script>
-  var slider = document.getElementById('slider');
-
-noUiSlider.create(slider, {
-    start: [20, 80],
-    connect: true,
-    range: {
-        'min': 0,
-        'max': 100
+  
+  // кнопки хедера
+  iconBtn.forEach(e => {
+    e.addEventListener('click', function() {
+      if(e.dataset.icon == 3) {
+        searchWrap.classList.toggle('searchWrap_animate')
+        wrapInput.classList.toggle('wrapInput_animate')
+        blockLeavesWrap.classList.toggle('blockLeavesWrap_animate')
+        const data = getLocalStorage('testString')
+        
+        if(!data) return 
+        const chips = document.querySelector('.chips')
+        chips.innerHTML = data.test2
+        chips.dataset.value = data
+      }
+    })
+  })
+  // оболочка поиска
+  searchWrap.addEventListener('click', function(e) {
+    if(e.target.dataset.search === 'wrap') {
+      searchWrap.classList.toggle('searchWrap_animate')
+      wrapInput.classList.toggle('wrapInput_animate')
+      blockLeavesWrap.classList.toggle('blockLeavesWrap_animate')
     }
-});
-</script> -->
-
-<!-- <script> 
-
-
-// select
-const option = document.querySelector('.slect-js')
-option.addEventListener('change', function() {
-  console.log(this.value)
-})
-
-
-// input
-const input = document.querySelector('.input-js')
-input.addEventListener('input', function() {
-  console.log(this.value)
-})
-
-
-
-// checkbox PLUS/MINUS
-const customCheckbox = document.querySelector('.custom-checkbox2')
-const blockInner = document.querySelector('.block > .blockInner')
-blockInner.style.display = 'none'
-// customCheckbox.checked = true
-customCheckbox.addEventListener('click', function() {
-  if(customCheckbox.checked) blockInner.style.display = 'none'
-  else blockInner.style.display = 'block'
-})
-
-
-// var slider = document.getElementById('slide');
-
-// noUiSlider.create(slider, {
-//     start: [20, 80],
-//     connect: true,
-//     range: {
-//         'min': 0,
-//         'max': 100
-//     }
-// });
-
-
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  contain: true
-});
-
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-  // options
-});
-
-
-const select = function() {
-  const selectOneInput = document.querySelectorAll('.selectOne__label')
-  selectOneInput.forEach(e => {
-    e.classList.add()
+    console.log(e.target.dataset.search)
   })
 
-
-}
-
-
-select()
-</script> -->
-
-
-<!-- <script>
-
-
-
-
-
-  const arr =  [
-    ['test1', 'test1'],
-    ['test2', 'test2'],
-    ['get', 'get1'],
-    ['id', 1],
-    ['id', 2]
-  ]
-  const arrTwo =  [
-    ['test1', 'test1'],
-    ['test2', 'test2'],
-    ['get', 'get1'],
-    ['id', 1],
-    ['id', 2]
-  ]
-
-  const obj =  {
-    'testObj': 'testObj',
-    'test2': 'test2'
+  let data = {
+    test: 1,
+    test2: 2
   }
-
-  const arr2 = {
-    one: {
-      value: 'a',
-      id: 1
-    },
-    two: {
-      value: 'b',
-      id: 2
-    },
-    three: {
-      value: 'c',
-      id: 3
+  // локасторедж
+  const btnLocalStor = document.querySelectorAll('[data-ls]')
+  btnLocalStor.forEach(e => {
+    if(e.dataset.ls === 'set') {
+      e.addEventListener('click', function() {
+        localStorage.setItem('testString', JSON.stringify(data))
+      })
     }
-  }
+    else {
+      e.addEventListener('click', function() {
+        const test = JSON.parse(localStorage.getItem('testString'))
+        console.log(test)
+      })
+    }
+  })
 
-  arrTest = {
-    water: [
-      {volume: 'test1', id: 1},
-      {volume: 'test41', id: 31323}
-    ],
-    salt: [
-      {volume: 'test2', id: 3123},
-      {volume: 'test12', id: 132}
-    ],
-    metal: [
-      {volume: 'test3', id: 1421},
-      {volume: 'test2', id: 123}
-    ]
-  }
+  document.addEventListener("DOMContentLoaded", function() {
+    localStorage.removeItem('testString')
+  })
 
-let newArr = []
-  for(let key in arrTest) {
-    arrTest[key].forEach(e => {
-      newArr.push(e.id)
-    })
-  }
-  console.log(newArr)
+</script>
 
-// arrTwo.forEach(e => {
-  // const map = new Map(arr)
-  // console.log(map)
-// })
-
-
-  // let arrTestTest = []
-
-  // for(let key in arrTest) {
-  //   const obj = Object.entries(arrTest[key])
-  //   // const map = new Map(arrTest[key])
-  //   console.log(arrTest[key])
-  // }
-
-  // const map = new Map(arr)
-  // map.forEach( e => console.log(e.entries()))
-  // for( let key of map.entries()) {
-  //   console.log(key)
-  // }
-
-</script> -->
 </html>
